@@ -1,22 +1,26 @@
-class BubbleSort {
+class SelectionSort {
   /**
-   * Bubbling up the largest value to the end of the array and growing the sorted partition from right to left
+   * Selecting the largest value in the unsorted partition and swapping it with the last item in the unsorted partition
+   * thus growing the sorted partition from right to left
    * @param array
    * @returns array
    */
-  public static sort(array: number[]): number[] {
+  public static sort(array: number[]) {
     // sorted partition grows from right to left hence the starting point for lastUnsortedIndex is the last element
     for (
       let lastUnsortedIndex = array.length - 1;
       lastUnsortedIndex > 0;
       lastUnsortedIndex--
     ) {
-      // sort ignoring the sorted partition, we use < because the previous loop has already sorted the lastUnsortedIndex
-      for (let j = 0; j < lastUnsortedIndex; j++) {
-        if (array[j] > array[j + 1]) {
-          this.swap(array, j, j + 1);
+      let largestValueIndex = 0;
+
+      // sort ignoring the sorted partition
+      for (let j = 0; j <= lastUnsortedIndex; j++) {
+        if (array[j] > array[largestValueIndex]) {
+          largestValueIndex = j;
         }
       }
+      this.swap(array, largestValueIndex, lastUnsortedIndex);
     }
 
     return array;
@@ -35,8 +39,8 @@ class BubbleSort {
 }
 
 (() => {
-  console.log('running bubble sort...');
+  console.log('running selection sort...');
   const array: number[] = [10, 26, -3, 14, 5000, 0, -49];
-  BubbleSort.sort(array);
+  SelectionSort.sort(array);
   console.log(array);
 })();
