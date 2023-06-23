@@ -7,8 +7,10 @@ class BubbleSort {
   public static sort(array: number[]): number[]{
     let lastUnsortedIndex = array.length - 1;
 
-    for (let i = lastUnsortedIndex; i > 0; i--) { // sorted partition grows from right to left hence the starting point for lastUnsortedIndex is the last element
-      for (let j = 0; j < i; j++) { // sort ignoring the sorted partition
+    // sorted partition grows from right to left hence the starting point for lastUnsortedIndex is the last element
+    for (let i = lastUnsortedIndex; i > 0; i--) {
+      // sort ignoring the sorted partition
+      for (let j = 0; j < i; j++) {
         if(array[j] > array[j + 1]){
           BubbleSort.swap(array, j, j + 1)
         }
@@ -18,7 +20,7 @@ class BubbleSort {
     return array
   }
 
-  public static swap(array: number[], i: number, j: number){
+  private swap(array: number[], i: number, j: number){
     if (i === j) {
       return
     }
