@@ -8,6 +8,7 @@ Note: Stable Sorts are preferred especially when sorting objects on multiple fie
 ## Stable Sorts
 
 - Bubble Sort (because we are sorting based on `j < i` as opposed to `j <= i`)
+- Insertion Sort
 
 ## Unstable Sort
 
@@ -15,10 +16,22 @@ Note: Stable Sorts are preferred especially when sorting objects on multiple fie
 
 ### Bubble Sort
 
+- In place algorithm, i.e. does not use extra memory. It uses extra fields but the extra memory being used does not depend on the number of items being sorted.
+- O(n2) time complexity (Quadratic)
+- Stable sort algorithm
+- Sorted partition grows from right to left
+
 ### Selection Sort
 
-- In place algorithm
-  - It doesn't use any extra memory. it's okay to use extra fields as long as the extra memory being used doesn't depend on the number of items being sorted.
+- In place algorithm, i.e. does not use extra memory. It uses extra fields but the extra memory being used does not depend on the number of items being sorted.
 - O(n2) time complexity (Quadratic)
 - Generally performs better than bubble sort because there is less swapping going on
 - Unstable sort algorithm
+- Sorted partition grows from right to left
+
+### Insertion Sort
+
+- In place algorithm, i.e. does not use extra memory. It uses extra fields but the extra memory being used does not depend on the number of items being sorted.
+- O(n2) time complexity (Quadratic)
+- Stable sort algorithm
+- Sorted partition grows from left to right
