@@ -2,6 +2,7 @@ class ShellSort {
   public static sort(array: number[]) {
     const startingGap = Math.floor(array.length / 2);
 
+    // on each iteration, we reduce the gap by half
     for (let gap = startingGap; gap >= 1; gap = Math.floor(gap / 2)) {
       let newElement = array[array.length];
       let j;
@@ -11,6 +12,7 @@ class ShellSort {
 
         let counter = j;
 
+        // when counter = gap, we've hit the front of the array
         while (counter >= gap && newElement < array[counter - gap]) {
           array[counter] = array[counter - gap];
           counter = counter - gap;
